@@ -80,7 +80,7 @@ jobs:
         run: |
           make ${{ inputs.target }}
           echo "TAG_ANME=$(date +%Y%m%d)" >> $GITHUB_ENV
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.target }}-${{ env.TAG_ANME }}
           path: trunk/images/*.trx
