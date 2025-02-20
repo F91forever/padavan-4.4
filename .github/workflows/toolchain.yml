@@ -25,9 +25,9 @@ jobs:
         with:
           name: toolchain
           path: toolchain-mipsel/mipsel-linux-uclibc-gcc10.tar.xz
-      - uses: svenstaro/upload-release-action@main
+      - uses: ncipollo/release-action@main
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: toolchain-mipsel/mipsel-linux-uclibc-gcc10.tar.xz
           tag: toolchain
-          overwrite: true
+          artifacts: toolchain-mipsel/mipsel-linux-uclibc-gcc10.tar.xz
+          allowUpdates: true
+          omitBodyDuringUpdate: true
